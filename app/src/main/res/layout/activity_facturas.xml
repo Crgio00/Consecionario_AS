@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".FacturasActivity">
+
+    <TextView
+        android:id="@+id/tvtitulo"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:textSize="35dp"
+        android:gravity="center"
+        android:layout_marginTop="50dp"
+        android:text="Venta vehiculos" />
+
+    <LinearLayout
+        android:layout_width="370dp"
+        android:layout_height="55dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/etcodigo"
+            android:layout_width="184dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Digite codigo factura"
+            android:inputType="textPersonName"
+            android:textSize="30dp" />
+
+        <Button
+            android:id="@+id/btconsultar"
+            android:layout_width="198dp"
+            android:layout_height="55dp"
+            android:layout_weight="1"
+            android:onClick="Consultar"
+            android:text="Consultar"
+            android:textSize="25dp" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/etfecha"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:textSize="30dp"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Digite fecha factura" />
+
+    <LinearLayout
+        android:layout_width="370dp"
+        android:layout_height="55dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/etidentificacion"
+            android:layout_width="184dp"
+            android:layout_height="55dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Identificacion"
+            android:inputType="number"
+            android:textSize="30dp" />
+
+        <Button
+            android:id="@+id/btconcliente"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:textSize="25dp"
+            android:onClick="Cliente_buscar"
+            android:layout_weight="1"
+            android:text="Cliente" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="370dp"
+        android:layout_height="55dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvnombre"
+            android:layout_width="136dp"
+            android:layout_height="55dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:hint="Nombre"
+            android:textSize="30dp" />
+
+        <TextView
+            android:id="@+id/tvtelefono"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:gravity="center"
+            android:hint="Telefono"
+            android:textSize="30dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="370dp"
+        android:layout_height="55dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/etplaca"
+            android:layout_width="180dp"
+            android:layout_height="55dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Placa"
+            android:inputType="number"
+            android:textSize="30dp" />
+
+        <Button
+            android:id="@+id/btconvehiculo"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:textSize="25dp"
+            android:onClick="Buscar_vehiculo"
+            android:layout_weight="1"
+            android:text="Vehiculo" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="370dp"
+        android:layout_height="55dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvmarca"
+            android:layout_width="136dp"
+            android:layout_height="55dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:hint="Marca"
+            android:textSize="30dp" />
+
+        <TextView
+            android:id="@+id/tvvalor"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:gravity="center"
+            android:hint="Valor"
+            android:textSize="30dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <CheckBox
+        android:id="@+id/cbactivo"
+        android:layout_width="370dp"
+        android:layout_height="55dp"
+        android:textSize="30dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:text=" Activo" />
+
+    <LinearLayout
+        android:layout_width="370dp"
+        android:layout_height="55dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btadicionar"
+            android:layout_width="95dp"
+            android:layout_height="55dp"
+            android:layout_weight="1"
+            android:onClick="Guardar"
+            android:text="Adicionar"
+            android:textSize="25dp" />
+
+        <Button
+            android:id="@+id/btanular"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:textSize="25dp"
+            android:layout_marginLeft="7dp"
+            android:layout_weight="1"
+            android:text="Anular" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="370dp"
+        android:layout_height="55dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btlimpiar"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:textSize="25dp"
+            android:layout_weight="1"
+            android:text="Limpiar" />
+
+        <Button
+            android:id="@+id/btregresar"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:textSize="25dp"
+            android:layout_marginLeft="7dp"
+            android:layout_weight="1"
+            android:text="Regresar" />
+    </LinearLayout>
+</LinearLayout>
+
