@@ -78,7 +78,7 @@
             android:layout_width="wrap_content"
             android:layout_height="55dp"
             android:textSize="25dp"
-            android:onClick="Cliente_buscar"
+            android:onClick="Cliente"
             android:layout_weight="1"
             android:text="Cliente" />
     </LinearLayout>
@@ -132,7 +132,7 @@
             android:layout_width="wrap_content"
             android:layout_height="55dp"
             android:textSize="25dp"
-            android:onClick="Buscar_vehiculo"
+            android:onClick="Vehiculo"
             android:layout_weight="1"
             android:text="Vehiculo" />
     </LinearLayout>
