@@ -108,6 +108,7 @@ public class VehiculosActivity extends AppCompatActivity {
             jetplaca.setEnabled(true);
             jetmodelo.setEnabled(true);
             jetmarca.setEnabled(true);
+            jetvalor.setEnabled(true);
             jetplaca.setEnabled(false);
             jbtguardar.setEnabled(true);
             jetmodelo.requestFocus();

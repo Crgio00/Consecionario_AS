@@ -78,6 +78,7 @@
             android:layout_width="wrap_content"
             android:layout_height="55dp"
             android:textSize="25dp"
+            android:enabled="false"
             android:onClick="Cliente"
             android:layout_weight="1"
             android:text="Cliente" />
@@ -133,6 +134,7 @@
             android:layout_height="55dp"
             android:textSize="25dp"
             android:onClick="Vehiculo"
+            android:enabled="false"
             android:layout_weight="1"
             android:text="Vehiculo" />
     </LinearLayout>
@@ -168,6 +170,7 @@
         android:layout_width="370dp"
         android:layout_height="55dp"
         android:textSize="30dp"
+        android:enabled="false"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         android:text=" Activo" />
@@ -185,6 +188,7 @@
             android:layout_height="55dp"
             android:layout_weight="1"
             android:onClick="Guardar"
+            android:enabled="false"
             android:text="Adicionar"
             android:textSize="25dp" />
 
@@ -193,6 +197,8 @@
             android:layout_width="wrap_content"
             android:layout_height="55dp"
             android:textSize="25dp"
+            android:onClick="Anular"
+            android:enabled="false"
             android:layout_marginLeft="7dp"
             android:layout_weight="1"
             android:text="Anular" />
@@ -210,6 +216,7 @@
             android:layout_width="wrap_content"
             android:layout_height="55dp"
             android:textSize="25dp"
+            android:onClick="Cancelar"
             android:layout_weight="1"
             android:text="Limpiar" />
 
@@ -220,6 +227,7 @@
             android:textSize="25dp"
             android:layout_marginLeft="7dp"
             android:layout_weight="1"
+            android:onClick="Regresar"
             android:text="Regresar" />
     </LinearLayout>
 </LinearLayout>

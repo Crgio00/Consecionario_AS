@@ -19,8 +19,8 @@ public class FacturasActivity extends AppCompatActivity {
     EditText etcodigo,etfecha,etidentificacion,etplaca;
     TextView tvnombre,tvtelefono,tvmarca,tvvalor;
     CheckBox cbactivo;
-    Button btadicionar,btanular;
-    String codigo,identificacion,nombre, telefono,placa,marca ,valor, fecha;
+    Button btadicionar,btanular, btconcliente, btconvehiculo;
+    String codigo,identificacion, telefono,placa,marca ,valor, fecha;
 
     long respuesta;
     boolean sw;
@@ -44,12 +44,14 @@ public class FacturasActivity extends AppCompatActivity {
         cbactivo=findViewById(R.id.cbactivo);
         btadicionar=findViewById(R.id.btadicionar);
         btanular=findViewById(R.id.btanular);
+        btconvehiculo=findViewById(R.id.btconvehiculo);
+        btconcliente=findViewById(R.id.btconcliente);
         etcodigo.requestFocus();
         sw=false;
     }//fin metodo oncreate
 
     public void Guardar (View view) {
-//Llevar el contenido de los objetos a variables
+    //Llevar el contenido de los objetos a variables
         codigo = etcodigo.getText().toString();
         placa = etplaca.getText().toString();
         fecha = etfecha.getText().toString();
@@ -98,7 +100,7 @@ public class FacturasActivity extends AppCompatActivity {
     }
     public void Consultar(View view) {
         codigo = etcodigo.getText().toString();
-        if (!codigo.isEmpty()) {
+        if (!codigo.isEmpty()){
             //Abrir la conexion en modo lectura
             SQLiteDatabase db=admin.getReadableDatabase();
             //Definir el Cursor y realizar la consulta
@@ -127,6 +129,12 @@ public class FacturasActivity extends AppCompatActivity {
             }else {
                 Toast.makeText(this, "Codigo de factura no existe  ", Toast.LENGTH_SHORT).show();
                 etcodigo.requestFocus();}
+
+            btconvehiculo.setEnabled(true);
+            btconcliente.setEnabled(true);
+            btanular.setEnabled(true);
+            btadicionar.setEnabled(true);
+
             db.close();
         }else{
             Toast.makeText(this, "codigo es requerido", Toast.LENGTH_SHORT).show();
@@ -204,6 +212,20 @@ public class FacturasActivity extends AppCompatActivity {
             Toast.makeText(this, "Error cambiando estado", Toast.LENGTH_SHORT).show();
         }
         db.close();
+    }
+    public void Anular(View view){
+        SQLiteDatabase db=admin.getWritableDatabase();
+        respuesta=db.delete("TblDetalle_Factura","Cod_factura='"+codigo+"'",null);
+        if (respuesta > 0){
+            Toast.makeText(this, "Registro eliminado", Toast.LENGTH_SHORT).show();
+            Limpiar();
+        }else{
+            Toast.makeText(this, "Error elimindo registro", Toast.LENGTH_SHORT).show();
+        }
+        db.close();
+    }
+    public void Cancelar(View view){
+        Limpiar();
     }
 
     public void Limpiar(){
